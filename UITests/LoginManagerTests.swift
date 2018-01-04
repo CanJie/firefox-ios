@@ -150,9 +150,9 @@ class LoginManagerTests: KIFTestCase {
         tester().waitForAnimationsToFinish()
         list = tester().waitForView(withAccessibilityIdentifier: "Login List") as! UITableView
         tester().waitForView(withAccessibilityLabel: "d9@email.com")
-        XCTAssertEqual(list.numberOfRows(inSection: 0), 1)
 
         tester().wait(forTimeInterval: 2)
+        XCTAssertEqual(list.numberOfRows(inSection: 0), 1)
         tester().tapView(withAccessibilityLabel: "Clear Search")
         // Filter by something that doesn't match anything
         tester().waitForView(withAccessibilityLabel: "a0@email.com, http://a0.com")
