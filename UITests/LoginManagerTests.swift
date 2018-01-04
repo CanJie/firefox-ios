@@ -146,9 +146,7 @@ class LoginManagerTests: KIFTestCase {
         tester().waitForView(withAccessibilityLabel: "a0@email.com, http://a0.com")
         tester().tapView(withAccessibilityLabel: "Enter Search Mode")
         tester().waitForAnimationsToFinish()
-        tester().enterText(intoCurrentFirstResponder: "password")
-        tester().waitForAnimationsToFinish()
-        tester().enterText(intoCurrentFirstResponder: "d9")
+        tester().enterText(intoCurrentFirstResponder: "passwordd9")
         tester().waitForAnimationsToFinish()
         list = tester().waitForView(withAccessibilityIdentifier: "Login List") as! UITableView
         tester().waitForView(withAccessibilityLabel: "d9@email.com")
