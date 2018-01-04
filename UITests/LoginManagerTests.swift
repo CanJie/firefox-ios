@@ -149,6 +149,7 @@ class LoginManagerTests: KIFTestCase {
         tester().enterText(intoCurrentFirstResponder: "password")
         tester().waitForAnimationsToFinish()
         tester().enterText(intoCurrentFirstResponder: "d9")
+        tester().waitForAnimationsToFinish()
         list = tester().waitForView(withAccessibilityIdentifier: "Login List") as! UITableView
         tester().waitForView(withAccessibilityLabel: "d9@email.com")
         XCTAssertEqual(list.numberOfRows(inSection: 0), 1)
