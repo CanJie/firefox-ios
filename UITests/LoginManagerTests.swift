@@ -135,6 +135,7 @@ class LoginManagerTests: KIFTestCase {
         tester().waitForAnimationsToFinish()
         tester().enterText(intoCurrentFirstResponder: "http://k10")
         tester().waitForAnimationsToFinish()
+        tester().wait(forTimeInterval: 3)
         tester().enterText(intoCurrentFirstResponder: ".com")
         tester().waitForAnimationsToFinish()
         list = tester().waitForView(withAccessibilityIdentifier: "Login List") as! UITableView
@@ -146,12 +147,14 @@ class LoginManagerTests: KIFTestCase {
         tester().waitForView(withAccessibilityLabel: "a0@email.com, http://a0.com")
         tester().tapView(withAccessibilityLabel: "Enter Search Mode")
         tester().waitForAnimationsToFinish()
-        tester().enterText(intoCurrentFirstResponder: "passwordd9")
+        tester().enterText(intoCurrentFirstResponder: "password")
         tester().waitForAnimationsToFinish()
+        tester().wait(forTimeInterval: 3)
+        tester().enterText(intoCurrentFirstResponder: "d9")
         list = tester().waitForView(withAccessibilityIdentifier: "Login List") as! UITableView
         tester().waitForView(withAccessibilityLabel: "d9@email.com")
 
-        tester().wait(forTimeInterval: 2)
+        tester().wait(forTimeInterval: 3)
         XCTAssertEqual(list.numberOfRows(inSection: 0), 1)
         tester().tapView(withAccessibilityLabel: "Clear Search")
         // Filter by something that doesn't match anything
